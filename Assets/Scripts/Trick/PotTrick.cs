@@ -79,6 +79,7 @@ public class PotTrick : MonoBehaviour, ITrickManager {
                     statusText.ShowStatusText("키를 획득하였습니다.");
                     statusTextRight.ShowStatusText("키를 획득하였습니다.");
                     gameManager.keyFlag = true;
+                    GameObject.Find("pPlane3").GetComponent<MeshRenderer>().enabled = true;
                 }
                 else
                 {
@@ -117,6 +118,7 @@ public class PotTrick : MonoBehaviour, ITrickManager {
             ParticleSystem particle = GameObject.Find("PotParticle").GetComponent<ParticleSystem>();
             var em = particle.emission;
             em.enabled = false;
+            fireFlag = false;
             statusText.ShowStatusText("불이 꺼졌습니다.");
             statusTextRight.ShowStatusText("불이 꺼졌습니다.");
         }

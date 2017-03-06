@@ -65,6 +65,7 @@ public class DoorOpener : MonoBehaviour, ITrickManager {
 	
 	void Update ()
     {
+        Debug.Log(string.Format("keyflag: {0} // opendoor: {1} // grab: {2}" ,gameManager.keyFlag, openedDoor, _grabFlag));
         if (gameManager.keyFlag && openedDoor && _grabFlag)
         {
             if (Mathf.Abs(grabAngle.x - gameManager.myoBaseObject.transform.eulerAngles.x) > 90.0f)
